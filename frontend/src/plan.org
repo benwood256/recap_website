@@ -1,0 +1,8 @@
+* Website Plan
+
+* To remember
+
+1. When making the data file to store the question & answers, make at least 1 backup
+   That way, if I delete any sections, there are backups just in case
+   i.e. I make a button which deletes an entire topic, with 1 database, that whole topics sub-categories
+        & questions are lost forever (a backup will never be over-writted or deleted, allowing for human error)

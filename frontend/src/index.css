@@ -1,0 +1,70 @@
+
+/******************************* Root colours *******************************/
+
+:root {
+    /* Colours */
+    --primary: #FF922B;
+    --secondary: #E67700;
+    --background: #202127;
+    --surface: #2C2E35;
+    --border: #454750;
+    --text: #F8F9FA;
+    --success: #40C98B;
+
+    /* Sizing */
+    --vsmall: 0.25rem;
+    --small: 0.5rem;
+    --smedium: 0.75rem;
+    --medium: 1rem;
+    --lmedium: 1.5rem;
+    --large: 2rem;
+    --xlarge: 2.5rem;
+    --xxlarge: 3rem;
+}
+
+/******************************* Global page *******************************/
+
+html,
+body {
+    min-height: 100%;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#root {
+    min-height: 100vh;
+    width:100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************* Global headers *******************************/
+
+h1,
+h2,
+h3 {
+    margin-bottom: var(--large);
+    font-weight: bold;
+}
+    
+p {
+    line-height: var(--lmedium);
+}
+
+/******************************* Practise page colour *******************************/
+
+/* Change the background of practice page & the Card, so it's clear you've swapped */
+
+body:has(.custom-navbar a.active[href="/"]) {
+    background-color: #1e1e23;
+}
+
+body:has(.custom-navbar a.active[href="/"]) .custom-card {
+    background-color: #29292f;
+}

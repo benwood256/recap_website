@@ -1,0 +1,187 @@
+/********************************************************************************************/
+/**************************************** components ****************************************/
+/********************************************************************************************/
+
+/******************************* Navbar *******************************/
+
+.custom-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--large);
+
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    border-radius: 999px;
+
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.75rem 2rem;
+
+    font-weight: bold;
+    font-size: var(--lmedium);
+}
+
+/* Remove standard styling from each element */
+.custom-navbar a {
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    transition: 0.3s ease;
+}
+
+/* On hover, do this */
+.custom-navbar a:hover {
+    transform: scale(1.03);
+}
+
+/* Active page */
+.custom-navbar a.active {
+    color: white;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px) scale(1.2);
+}
+
+/******************************* Card *******************************/
+
+.custom-card {
+    width: 100%;
+    padding: 1.5rem;
+
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.custom-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.15);
+
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.15);
+}
+
+/******************************* Footer.jsx *******************************/
+
+.footer {
+    background-color: var(--primary); /* background colour of Footer */
+    color: black;                     /* text colour */
+    padding: var(--medium);           /* 1rem -> vertical spacing; 1rem -> horizontal spacing */
+    margin-top: auto;                 /* automatically adjust the height of this */
+
+    font-weight: bold;
+}
+
+.footer-content {
+    display: flex;                   /* convert elements to flex */
+    justify-content: space-between;  /* controls how flex items are positioned on the main axis
+                                        i.e. places them horizontally */
+    align-items: center;             /* centers vertically */ 
+}
+
+
+/*******************************************************************************************/
+/************************************ components/manage ************************************/
+/*******************************************************************************************/
+
+
+
+/*******************************************************************************************/
+/*********************************** components/practice ***********************************/
+/*******************************************************************************************/
+
+/******************************* CategorySelector.jsx *******************************/
+
+.category-card {
+    width: 13rem;
+}
+
+.category-card .custom-card {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-name {
+    font-weight: bold;
+    font-size: var(--lmedium);
+}
+
+
+/*******************************************************************************************/
+/****************************************** pages/ *****************************************/
+/*******************************************************************************************/
+
+/****************************************** Manage *****************************************/
+
+/* Container */
+.topic-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Shared styling */
+.add-topic-button,
+.delete-topic-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Add topic */
+.add-topic-button {
+    background-color: var(--primary);
+    color: var(--background);
+    border: 1px solid var(--primary);
+    font-weight: 700;
+}
+
+/* Delete topic */
+.delete-topic-button {
+    background-color: transparent;
+    color: #FF4545;
+    border: 1px solid #FF4545;
+}
+
+/* Add topic hover */
+.add-topic-button:hover {
+    box-shadow: 0 0 12px rgba(255, 146, 43, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Delete topic hover */
+.delete-topic-button:hover {
+    background-color: rgba(255, 69, 69, 0.1);
+    border-color: #FF4545;
+    box-shadow: 0 0 6px rgba(255, 69, 69, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Click animation */
+.add-topic-button:active,
+.delete-topic-button:active {
+    transform: scale(0.95);
+}
