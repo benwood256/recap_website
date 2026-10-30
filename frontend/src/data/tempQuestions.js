@@ -17,5 +17,14 @@ export const tempQuestions = [
         type: "flashcard",
         question: "What is the purpose of the <div> element?",
         answer: "Groups HTML elements together"
+    },
+    {
+        id: 3,
+        category: "frontend",
+        subcategory: "html",
+        type: "keybinding",
+        question: "Hit Ctrl + k",
+        answer: "Groups HTML elements together"
     }
+
 ];

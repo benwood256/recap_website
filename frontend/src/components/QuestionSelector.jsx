@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 import { tempQuestions } from "../data/tempQuestions.js";
 import { categories } from "../data/categories.js";
@@ -24,27 +25,45 @@ export function QuestionSelector() {
 	    question.subcategory === subcategory
     );
 
+    // Track current question/question index
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // start at 1st index
+
+    // Actually set & store the active question
+    const currentQuestion = selectedQuestions[currentQuestionIndex];
+
     // If URL mode is 'practice' 
     if (mode === "practice") {
 	return (
 	    <main className="container">
 
-		    <h2>{selectedSubcategory.name} Questions</h2>
-		    <div className="row g-4 justify-content-center">
+		<h2>{selectedSubcategory.name} Questions</h2>
 
-			{/* Map each question list from 'tempQuestions.js' to a box */}
-			{selectedQuestions.map((question) => (
-			    <div
-				key={question.id}
-				className="col-auto category-card"
-			    >
-				<div className="category-card">
-				    <QuestionCard question={question} />
-				</div>
-			    </div>
-			))}
+		{/* Put Progress.jsx here -> track question index & display it */}
 
+		{currentQuestion ? (
+		    <div>
+			<QuestionCard question={currentQuestion} setCurrentQuestionIndex={setCurrentQuestionIndex}/>
+
+			<button
+			    className="next-question-button" 
+			    onClick={() =>
+				setCurrentQuestionIndex(
+				    currentQuestionIndex + 1
+				)
+			    }
+			    disabled={
+				currentQuestionIndex >= selectedQuestions.length - 1
+			    }
+			>
+			    Skip Question
+			</button>
 		    </div>
+
+		) : (
+		    <p>No questions available</p>
+		)}
+
+
 
 	    </main>
 	);

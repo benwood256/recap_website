@@ -128,6 +128,20 @@
 
 /****************************************** Manage *****************************************/
 
+/* Place submit button next to input box */
+.input-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--medium);
+    padding: 2rem;
+
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Container */
 .topic-buttons {
     display: flex;
@@ -137,51 +151,87 @@
     margin-bottom: 1.5rem;
 }
 
-/* Shared styling */
+
+/* Shared button styling */
 .add-topic-button,
-.delete-topic-button {
+.next-question-button,
+.delete-topic-button,
+.submit-text-button {
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 0.75rem 1.5rem;
-
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
-/* Add topic */
-.add-topic-button {
+/* Add Topic & Next Question */
+.add-topic-button,
+.next-question-button {
     background-color: var(--primary);
     color: var(--background);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--background);
     font-weight: 700;
 }
 
-/* Delete topic */
+.submit-text-button {
+    background-color: var(--success);
+    color: var(--background);
+    border: 1px solid var(--background);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+}
+
+/* Center next question button & add a gap */
+.next-question-button {
+    margin: 1rem auto 0;
+}
+
+/* Delete Topic */
 .delete-topic-button {
     background-color: transparent;
     color: #FF4545;
     border: 1px solid #FF4545;
 }
 
-/* Add topic hover */
-.add-topic-button:hover {
+/* Add Topic & Next Question hover */
+.add-topic-button:hover,
+.next-question-button:hover {
     box-shadow: 0 0 12px rgba(255, 146, 43, 0.3);
-    transform: translateY(-3px);
 }
 
-/* Delete topic hover */
+.submit-text-button:hover {
+    box-shadow: 0 0 12px rgba(64, 201, 139, 0.3);
+}
+
+/* Delete Topic hover */
 .delete-topic-button:hover {
     background-color: rgba(255, 69, 69, 0.1);
-    border-color: #FF4545;
     box-shadow: 0 0 6px rgba(255, 69, 69, 0.4);
+}
+
+/* Shared hover animation */
+.add-topic-button:hover,
+.next-question-button:hover,
+.delete-topic-button:hover,
+.submit-text-button:hover {
     transform: translateY(-3px);
 }
 
-/* Click animation */
+/* Shared click animation */
 .add-topic-button:active,
-.delete-topic-button:active {
+.next-question-button:active,
+.delete-topic-button:active,
+.submit-text-button:active {
     transform: scale(0.95);
 }
+
+/* Disabled Next Question */
+.next-question-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
