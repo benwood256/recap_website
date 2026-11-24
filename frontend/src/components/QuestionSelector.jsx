@@ -7,6 +7,8 @@ import { categories } from "../data/categories.js";
 import { QuestionCard } from "./practice/QuestionCard";
 import { Card } from "./Card";
 
+// ADD FUNCTIONALITY TO NEXT TOPIC BUTTON
+
 export function QuestionSelector() {
     const { mode, category, subcategory } = useParams();
 
@@ -44,19 +46,25 @@ export function QuestionSelector() {
 		    <div>
 			<QuestionCard question={currentQuestion} setCurrentQuestionIndex={setCurrentQuestionIndex}/>
 
-			<button
-			    className="next-question-button" 
-			    onClick={() =>
-				setCurrentQuestionIndex(
-				    currentQuestionIndex + 1
-				)
-			    }
-			    disabled={
-				currentQuestionIndex >= selectedQuestions.length - 1
-			    }
-			>
-			    Skip Question
-			</button>
+			{currentQuestionIndex < selectedQuestions.length - 1 ? (
+			    <button
+				className="next-question-button" 
+				onClick={() =>
+				    setCurrentQuestionIndex(
+					currentQuestionIndex + 1
+				    )
+				}
+			    >
+				Skip Question
+			    </button>
+			) : (
+			    <button
+				className="next-question-button"
+			    >
+				Next Topic
+				</button>
+			    )
+			}
 		    </div>
 
 		) : (

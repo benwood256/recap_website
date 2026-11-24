@@ -24,7 +24,7 @@ export const tempQuestions = [
         subcategory: "html",
         type: "keybinding",
         question: "Hit Ctrl + k",
-        answer: "Groups HTML elements together"
+        answer: ['control', 'alt', 'k']
     }
 
 ];

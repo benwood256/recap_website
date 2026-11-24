@@ -91,17 +91,6 @@
     align-items: center;             /* centers vertically */ 
 }
 
-
-/*******************************************************************************************/
-/************************************ components/manage ************************************/
-/*******************************************************************************************/
-
-
-
-/*******************************************************************************************/
-/*********************************** components/practice ***********************************/
-/*******************************************************************************************/
-
 /******************************* CategorySelector.jsx *******************************/
 
 .category-card {
@@ -121,6 +110,138 @@
     font-size: var(--lmedium);
 }
 
+/*******************************************************************************************/
+/************************************ components/manage ************************************/
+/*******************************************************************************************/
+
+
+
+/*******************************************************************************************/
+/*********************************** components/practice ***********************************/
+/*******************************************************************************************/
+
+
+/****************************************** Flashcard *****************************************/
+
+.flashcard-question {
+    width: 100%;
+    height: 25rem;
+}
+
+/* Center the question & answer */
+.flashcard-question .card-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+/* The following handles flipping the card around animation */
+.flashcard-container {
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.flashcard-container.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+}
+
+/* Make the Card fill the flip container */
+.flashcard-front .custom-card,
+.flashcard-back .custom-card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/****************************************** KeybindingQuestion *****************************************/
+
+.keybinding-card {
+    width: 100%;
+    height: 25rem;
+}
+
+/* Center the keybinding */
+.keybinding-card .card-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/****************************************** Feedback *****************************************/
+
+/* Flashes the Card red or green depending on if the answer is right or wrong */
+.custom-card.correctAnswer {
+    animation: flashGreen 1.25s ease;
+}
+
+.custom-card.incorrectAnswer {
+    animation: flashRed 1.25s ease;
+}
+
+@keyframes flashGreen {
+    0% {
+        background-color: #28a745;
+    }
+    100% {
+        background-color: #2b2a30;
+    }
+}
+
+@keyframes flashRed {
+    0% {
+        background-color: #dc3545;
+    }
+    100% {
+        background-color: #2b2a30;
+    }
+}
+
+
+/****************************************** Feedback *****************************************/
+
+.press-keys {
+    position: fixed;
+    bottom: 65px; /* Keeps it above footer */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.press-keys h4 {
+    margin: 0.25rem;
+}
 
 /*******************************************************************************************/
 /****************************************** pages/ *****************************************/
@@ -234,4 +355,3 @@
     transform: none;
     box-shadow: none;
 }
-
