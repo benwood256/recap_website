@@ -19,4 +19,21 @@ export function Feedback({ correct, correctAnswer, questionType }) {
 	    </div>
 	)
     }
+
+    /* FIX: currently doesn't display */
+    else if (questionType = "keybinding") {
+	return (
+	    <div className={correct ? "correctAnswer": " incorrectAnswer"}>
+		{correct ? (
+		    <div>
+		    </div>
+		) : (
+		    <div>
+			<p>Incorrect, the answer is:</p>
+			<h4><b>{correctAnswer}</b></h4>
+		    </div>
+		)}
+	    </div>
+	)
+    }
 }
